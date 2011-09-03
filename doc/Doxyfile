@@ -1,0 +1,10 @@
+PROJECT_NAME           = "Bayesian Blocks"
+PROJECT_NUMBER         = "v0"
+FILE_PATTERNS          = *.h *.cxx *.c
+#FILE_PATTERNS          = *.h *.cxx *.c *.py
+#INPUT_FILTER           = "python pythfilter.py -f"
+#FILTER_SOURCE_FILES    = YES
+EXAMPLE_PATH           = "../cmt" "." "../data"
+IMAGE_PATH             ="../doc/images"
+STRIP_CODE_COMMENTS    = NO
+#QUIET                  = YES

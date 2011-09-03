@@ -1,0 +1,12 @@
+/** @file release.notes
+    @brief package BayesianBlocks
+    @brief Package coordinator: J. Chiang
+
+    $Id: release.notes,v 1.14 2011/08/12 19:15:21 jchiang Exp $
+
+    @verbatim
+    * EOH *
+
+ BayesianBlocks-04-00-0  02-Sep-2011 jchiang Re-implemented BB package; added to the main cvs repository
+    @endverbatim
+*/
