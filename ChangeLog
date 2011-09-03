@@ -1,0 +1,27 @@
+------------------------------------------------------------
+User: jchiang  Fri Sep  2 17:55:59 PDT 2011
+BayesianBlocks
+
+Log Message:
+Initial import of re-implemented BayesianBlocks for inclusion in ScienceTools
+
+Status:
+
+Vendor Tag:	BayesianBlocks-04-00-00
+Release Tags:	JC
+		
+N BayesianBlocks/SConscript
+N BayesianBlocks/BayesianBlocksLib.py
+N BayesianBlocks/src/BayesianBlocks.cxx
+N BayesianBlocks/src/mainpage.h
+N BayesianBlocks/src/BayesianBlocks.i
+N BayesianBlocks/BayesianBlocks/BayesianBlocks.h
+N BayesianBlocks/python/test_BB.py
+N BayesianBlocks/python/BayesianBlocks_python.py
+N BayesianBlocks/python/test_BB_speed.py
+N BayesianBlocks/doc/Doxyfile
+N BayesianBlocks/doc/release.notes
+
+No conflicts created by this import
+
+    *
