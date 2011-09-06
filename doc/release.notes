@@ -2,11 +2,13 @@
     @brief package BayesianBlocks
     @brief Package coordinator: J. Chiang
 
-    $Id: release.notes,v 1.14 2011/08/12 19:15:21 jchiang Exp $
+    $Id: release.notes,v 1.1.1.1 2011/09/03 00:55:59 jchiang Exp $
 
     @verbatim
     * EOH *
 
- BayesianBlocks-04-00-0  02-Sep-2011 jchiang Re-implemented BB package; added to the main cvs repository
+ BayesianBlocks-04-00-01  06-Sep-2011 hmk     Just issuing a new tag identical
+     to 04-00-00
+ BayesianBlocks-04-00-00  02-Sep-2011 jchiang Re-implemented BB package; added to the main cvs repository
     @endverbatim
 */
