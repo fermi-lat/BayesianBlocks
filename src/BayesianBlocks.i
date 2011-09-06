@@ -1,7 +1,6 @@
 // -*- mode: c++ -*-
 %module BayesianBlocks
 %{
-#include <fenv.h>
 #include <utility>
 #include <vector>
 #include "BayesianBlocks/BayesianBlocks.h"
@@ -21,9 +20,6 @@
 %template(IntVector) std::vector<int>;
 %include BayesianBlocks/BayesianBlocks.h
 %extend BayesianBlocks {
-   static void enableFPE() {
-      feenableexcept(FE_INVALID | FE_DIVBYZERO | FE_OVERFLOW);
-   }
    std::pair<std::vector<double>, std::vector<double> > 
       lightCurve(double ncp_prior) {
       std::vector<double> xx, yy;

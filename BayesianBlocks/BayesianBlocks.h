@@ -5,11 +5,15 @@
  * 
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ASP-scons/BayesianBlocks/BayesianBlocks/BayesianBlocks.h,v 1.6 2011/08/12 19:14:31 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/BayesianBlocks/BayesianBlocks/BayesianBlocks.h,v 1.1.1.1 2011/09/03 00:55:59 jchiang Exp $
  */
 
 #ifndef _BayesianBlocks_h
 #define _BayesianBlocks_h
+
+#ifdef TRAP_FPE
+#include <fenv.h>
+#endif
 
 #include <deque>
 #include <vector>
@@ -61,6 +65,15 @@ public:
    /// @brief ncp_prior calibration for unbinned case as a function of
    /// number of events and false positive fraction.
    static double ncp_prior(double nevents, double fp_frac);
+
+   static void enableFPE() {
+#ifdef TRAP_FPE
+      feenableexcept(FE_INVALID | FE_DIVBYZERO | FE_OVERFLOW);
+#else
+      throw std::runtime_error("FPE handling is disabled "
+                               "on non-linux platforms.");
+#endif
+   }
 
 private:
 
