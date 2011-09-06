@@ -1,4 +1,24 @@
 ------------------------------------------------------------
+TAG
+Tag name: BayesianBlocks-04-00-01, operation: add
+Package: BayesianBlocks
+User: heather  Tue Sep  6 07:44:30 2011
+Files:
+  BayesianBlocks/ChangeLog  1.1
+  BayesianBlocks/BayesianBlocksLib.py  1.1.1.1
+  BayesianBlocks/SConscript  1.2
+  BayesianBlocks/BayesianBlocks/BayesianBlocks.h  1.1.1.1
+  BayesianBlocks/doc/release.notes  1.2
+  BayesianBlocks/doc/Doxyfile  1.1.1.1
+  BayesianBlocks/python/test_BB.py  1.1.1.1
+  BayesianBlocks/python/BayesianBlocks_python.py  1.1.1.1
+  BayesianBlocks/python/test_BB_speed.py  1.1.1.1
+  BayesianBlocks/src/mainpage.h  1.1.1.1
+  BayesianBlocks/src/BayesianBlocks.cxx  1.1.1.1
+  BayesianBlocks/src/BayesianBlocks.i  1.1.1.1
+
+    *
+------------------------------------------------------------
 User: heather  Tue Sep  6 07:44:08 PDT 2011
 BayesianBlocks/doc
 
