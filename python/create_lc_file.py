@@ -5,7 +5,7 @@ used in BayesianBlocks analysis.
 @author J. Chiang
 """
 #
-# $Header$
+# $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/BayesianBlocks/python/create_lc_file.py,v 1.2 2011/09/19 03:59:35 jchiang Exp $
 #
 import os
 import numpy as num
@@ -31,13 +31,26 @@ def tbounds(ft1file):
     ft1 = pyfits.open(ft1file)
     return ft1['EVENTS'].header['TSTART'], ft1['EVENTS'].header['TSTOP']
 
+def ebounds(ft1file):
+    ft1 = pyfits.open(ft1file)
+    header = ft1['EVENTS'].header
+    ndskeys = header['NDSKEYS']
+    for i in range(1, ndskeys+1):
+        type = 'DSTYP%i' % i
+        if header[type] == 'ENERGY':
+            key = 'DSVAL%i' % i
+            data = header[key].split(':')
+            return float(data[0]), float(data[1])
+
 def create_lc_file(evfile, scfile, lcfile, irfs, specin=-2.,
                    tmp_ext='time_bins'):
     binfile = '%s.txt' % tmp_ext
     tbinfile = '%s.fits' % tmp_ext
-    write_cell_boundaries(events.TIME, time_bins_txt)
+    events = FitsNTuple(evfile)
+    write_cell_boundaries(events.TIME, binfile)
     gtbindef.run(bintype='t', binfile=binfile, outfile=tbinfile)
     tstart, tstop = tbounds(evfile)
+    emin, emax = ebounds(evfile)
     gtbin.run(evfile=evfile, scfile=scfile, outfile=lcfile, algorithm='LC',
               tbinalg='FILE', tstart=tstart, tstop=tstop, tbinfile=tbinfile)
     gtexposure.run(infile=lcfile, scfile=scfile, irfs=irfs, srcmdl='none',
