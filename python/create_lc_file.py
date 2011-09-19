@@ -1,6 +1,6 @@
 """
-@brief Script to create light curve file, with exposure calculation, used in 
-BayesianBlocks analysis.
+@brief Script to create light curve file, with exposure calculation,
+used in BayesianBlocks analysis.
 
 @author J. Chiang
 """
