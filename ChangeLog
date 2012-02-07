@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: cohen  Tue Feb  7 06:32:47 PST 2012
+ScienceTools-scons/BayesianBlocks/src
+
+Modified Files:
+	BayesianBlocks.i 
+Log Message:
+fix cstd import for swig
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-09-27-00, operation: add
 Package: BayesianBlocks
