@@ -1,6 +1,7 @@
 // -*- mode: c++ -*-
 %module BayesianBlocks
 %{
+#include <cstddef>
 #include <utility>
 #include <vector>
 #include "BayesianBlocks/BayesianBlocks.h"
