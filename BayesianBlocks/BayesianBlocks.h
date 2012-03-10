@@ -5,7 +5,7 @@
  * 
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/BayesianBlocks/BayesianBlocks/BayesianBlocks.h,v 1.1.1.1 2011/09/03 00:55:59 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/BayesianBlocks/BayesianBlocks/BayesianBlocks.h,v 1.2 2011/09/06 15:44:11 jchiang Exp $
  */
 
 #ifndef _BayesianBlocks_h
@@ -25,12 +25,12 @@ public:
    BayesianBlocks(const std::vector<double> & arrival_times);
 
    BayesianBlocks(double start_time, 
-                   const std::vector<double> & bin_content,
-                   const std::vector<double> & bin_sizes);
+                  const std::vector<double> & bin_content,
+                  const std::vector<double> & bin_sizes);
 
    BayesianBlocks(const std::vector<double> & xx,
-                   const std::vector<double> & yy,
-                   const std::vector<double> & dy);
+                  const std::vector<double> & yy,
+                  const std::vector<double> & dy);
 
    /// @brief Compute the global optimum reconstruction of the 
    /// piecewise constant function.
