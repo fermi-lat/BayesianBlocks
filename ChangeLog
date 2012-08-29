@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Wed Aug 29 12:15:03 PDT 2012
+BayesianBlocks
+
+Modified Files:
+	SConscript 
+Log Message:
+stag/GoGui_auto-tag
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-09-30-00, operation: add
 Package: BayesianBlocks
