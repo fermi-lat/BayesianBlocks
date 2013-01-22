@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Jan 22 09:36:41 PST 2013
+BayesianBlocks/python
+
+Modified Files:
+	create_lc_file.py 
+Log Message:
+use TSTART, TSTOP from ft1 file to set outer boundaries of Voronoi cells rather than using reflection of midpoint to neighboring event
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-09-31-01, operation: add
 Package: BayesianBlocks
