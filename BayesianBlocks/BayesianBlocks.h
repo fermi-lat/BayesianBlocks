@@ -5,7 +5,7 @@
  * 
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/BayesianBlocks/BayesianBlocks/BayesianBlocks.h,v 1.2 2011/09/06 15:44:11 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/BayesianBlocks/BayesianBlocks/BayesianBlocks.h,v 1.3 2012/03/10 15:35:40 jchiang Exp $
  */
 
 #ifndef _BayesianBlocks_h
@@ -22,7 +22,14 @@ class BayesianBlocks {
 
 public:
 
-   BayesianBlocks(const std::vector<double> & arrival_times);
+
+   /// @param arrival_times Event arrival times
+   /// @param tstart Start time of observation interval to set the
+   ///        minimum boundary of the first cell.
+   /// @param tstop Stop time of the observation interval to set the 
+   ///        maximum boundary of the last cell.
+   BayesianBlocks(const std::vector<double> & arrival_times,
+                  double tstart, double tstop);
 
    BayesianBlocks(double start_time, 
                   const std::vector<double> & bin_content,
@@ -80,6 +87,7 @@ private:
    bool m_point_mode;
    bool m_binned;
    double m_tstart;
+   double m_tstop;
    std::vector<double> m_cellSizes;
    std::deque<double> m_unscaledCellSizePartialSums;
    std::deque<double> m_cellSizePartialSums;

@@ -5,21 +5,31 @@ file processed by gtexposure.
 @author J. Chiang
 """
 #
-# $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/BayesianBlocks/python/bb_analysis.py,v 1.1 2011/09/19 03:58:04 jchiang Exp $
+# $Header: /nfs/slac/g/glast/ground/cvs/BayesianBlocks/python/bb_analysis.py,v 1.2 2011/09/19 05:07:49 jchiang Exp $
 #
 import numpy as num
+import pyfits
 from BayesianBlocks import BayesianBlocks
 from FitsNTuple import FitsNTuple
 
+def tbounds(evfile):
+    foo = pyfits.open(evfile)
+    return foo['EVENTS'].header['TSTART'], foo['EVENTS'].header['TSTOP']
+
 def bb_analysis(evfile, lcfile, fp_frac=1e-3, outfile='change_points.txt'):
     events = FitsNTuple(evfile)
-    bb = BayesianBlocks(events.TIME)
+    tstart, tstop = tbounds(evfile)
+    bb = BayesianBlocks(events.TIME, tstart, tstop)
 
     lc_nt = FitsNTuple(lcfile)
     bb.setCellSizes(lc_nt.EXPOSURE.tolist())
 
     nprior = BayesianBlocks.ncp_prior(len(events.TIME), fp_frac)
     x, y = bb.lightCurve(nprior)
+
+    x = list(x)
+    x[0] = lc_nt.TIME[0] - lc_nt.TIMEDEL[0]/2.
+    x[-1] = lc_nt.TIME[-1] + lc_nt.TIMEDEL[-1]/2.
 
     #
     # Compute fluxes over each block by summing exposures from light
