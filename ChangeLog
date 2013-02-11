@@ -1,5 +1,14 @@
 ------------------------------------------------------------
 User: jchiang  Mon Feb 11 10:41:51 PST 2013
+BayesianBlocks/src
+
+Modified Files:
+	BayesianBlocks.cxx 
+Log Message:
+use TSTART, TSTOP from ft1 file to set outer cell boundaries in event mode; update C++ code to do this
+    *
+------------------------------------------------------------
+User: jchiang  Mon Feb 11 10:41:51 PST 2013
 BayesianBlocks/python
 
 Modified Files:
