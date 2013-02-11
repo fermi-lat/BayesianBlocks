@@ -2,9 +2,9 @@
 # @file SConscript
 # @brief scons build specifications for BayesianBlocks
 #
-# $Header: /nfs/slac/g/glast/ground/cvs/BayesianBlocks/SConscript,v 1.4 2012/08/29 19:15:03 jchiang Exp $
+# $Header: /nfs/slac/g/glast/ground/cvs/BayesianBlocks/SConscript,v 1.5 2013/01/22 17:37:18 jchiang Exp $
 # Authors: J. Chiang <jchiang@slac.stanford.edu>
-# Version: BayesianBlocks-04-01-00
+# Version: BayesianBlocks-04-01-01
 
 import os
 Import('baseEnv')

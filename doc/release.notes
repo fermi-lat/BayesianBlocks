@@ -2,11 +2,12 @@
     @brief package BayesianBlocks
     @brief Package coordinator: J. Chiang
 
-    $Id: release.notes,v 1.4 2012/08/29 19:15:03 jchiang Exp $
+    $Id: release.notes,v 1.5 2013/01/22 17:37:18 jchiang Exp $
 
     @verbatim
     * EOH *
 
+ BayesianBlocks-04-01-01 11-Feb-2013 jchiang update C++ code to use TSTART, TSTOP from ft1 file when defining cell boundaries in event mode
  BayesianBlocks-04-01-00 22-Jan-2013 jchiang use TSTART, TSTOP from ft1 file to set outer boundaries of Voronoi cells rather than using reflection of midpoint to neighboring event
  BayesianBlocks-04-00-03 29-Aug-2012 jchiang tag to capture #include <cstddef> added by Johann for gcc4.4
  BayesianBlocks-04-00-02 06-Sep-2011 jchiang ifdef FPE handling code to enable Mac builds
