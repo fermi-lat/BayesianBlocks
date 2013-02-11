@@ -5,7 +5,7 @@
  * 
  * @author J. Chiang
  *
- * $Header: /nfs/slac/g/glast/ground/cvs/ASP-scons/BayesianBlocks/src/BayesianBlocks.cxx,v 1.6 2011/08/12 19:14:31 jchiang Exp $
+ * $Header: /nfs/slac/g/glast/ground/cvs/BayesianBlocks/src/BayesianBlocks.cxx,v 1.1.1.1 2011/09/03 00:55:59 jchiang Exp $
  */
 
 #include <cmath>
@@ -26,10 +26,12 @@ namespace {
 }
 
 BayesianBlocks::
-BayesianBlocks(const std::vector<double> & arrival_times)
+BayesianBlocks(const std::vector<double> & arrival_times, 
+               double tstart, double tstop)
    : m_point_mode(false),
      m_binned(false),
-     m_tstart((3*arrival_times[0] - arrival_times[1])/2.),
+     m_tstart(tstart),
+     m_tstop(tstop),
      m_cellSizes(arrival_times.size(), 0),
      m_cellContent(arrival_times.size(), 1.),
      m_blockCost(new BlockCostEvent(*this)) {
@@ -53,6 +55,7 @@ BayesianBlocks(const std::vector<double> & xx,
    : m_point_mode(true),
      m_binned(false),
      m_tstart((3*xx[0] - xx[1])/2.),
+     m_tstop((3*xx[xx.size()-1] - xx[xx.size()-2])/2.),
      m_cellSizes(xx.size(), 0),
      m_cellContent(yy),
      m_cellErrors(dy),
@@ -149,11 +152,12 @@ void BayesianBlocks::lightCurve(const std::deque<size_t> & changePoints,
 void BayesianBlocks::
 generateCells(const std::vector<double> & arrival_times) {
    size_t npts(arrival_times.size());
-   m_cellSizes[0] = arrival_times[1] - arrival_times[0];
+   m_cellSizes[0] = (arrival_times[1] + arrival_times[0])/2. - m_tstart;
    for (size_t i(1); i < npts-1; i++) {
       m_cellSizes[i] = (arrival_times[i+1] - arrival_times[i-1])/2.;
    }
-   m_cellSizes[npts-1] = arrival_times[npts-1] - arrival_times[npts-2];
+   m_cellSizes[npts-1] = m_tstop - (arrival_times[npts-1] 
+                                    + arrival_times[npts-2])/2.;
    cellPartialSums();
 }
 
