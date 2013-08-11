@@ -5,7 +5,7 @@ file processed by gtexposure.
 @author J. Chiang
 """
 #
-# $Header: /nfs/slac/g/glast/ground/cvs/BayesianBlocks/python/bb_analysis.py,v 1.2 2011/09/19 05:07:49 jchiang Exp $
+# $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/BayesianBlocks/python/bb_analysis.py,v 1.3 2013/02/11 18:41:51 jchiang Exp $
 #
 import numpy as num
 import pyfits
@@ -14,7 +14,9 @@ from FitsNTuple import FitsNTuple
 
 def tbounds(evfile):
     foo = pyfits.open(evfile)
-    return foo['EVENTS'].header['TSTART'], foo['EVENTS'].header['TSTOP']
+    tstart = float(foo['EVENTS'].header['TSTART'])
+    tstop = float(foo['EVENTS'].header['TSTOP'])
+    return tstart, tstop
 
 def bb_analysis(evfile, lcfile, fp_frac=1e-3, outfile='change_points.txt'):
     events = FitsNTuple(evfile)

@@ -5,7 +5,7 @@ used in BayesianBlocks analysis.
 @author J. Chiang
 """
 #
-# $Header: /nfs/slac/g/glast/ground/cvs/BayesianBlocks/python/create_lc_file.py,v 1.3 2011/09/19 05:07:49 jchiang Exp $
+# $Header: /nfs/slac/g/glast/ground/cvs/ScienceTools-scons/BayesianBlocks/python/create_lc_file.py,v 1.4 2013/01/22 17:36:41 jchiang Exp $
 #
 import os
 import numpy as num
@@ -31,7 +31,11 @@ def write_cell_boundaries(arrival_times, outfile, tbounds=None):
 
 def tbounds(ft1file):
     ft1 = pyfits.open(ft1file)
-    return ft1['EVENTS'].header['TSTART'], ft1['EVENTS'].header['TSTOP']
+    # Some sources of FT1 data have TSTART and TSTOP as strings, so
+    # need to convert to ensure correct downstream behavior.
+    tstart = float(ft1['EVENTS'].header['TSTART'])
+    tstop = float(ft1['EVENTS'].header['TSTOP'])
+    return tstart, tstop
 
 def ebounds(ft1file):
     ft1 = pyfits.open(ft1file)
