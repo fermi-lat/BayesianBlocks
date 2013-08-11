@@ -1,4 +1,15 @@
 ------------------------------------------------------------
+User: jchiang  Sun Aug 11 16:22:37 PDT 2013
+ScienceTools-scons/BayesianBlocks/python
+
+Modified Files:
+	bb_analysis.py create_lc_file.py 
+Added Files:
+	FitsNTuple.py 
+Log Message:
+add FitsNTuple.py, handle ft1 files that have TSTART and TSTOP as strings
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-09-32-05, operation: add
 Package: BayesianBlocks
