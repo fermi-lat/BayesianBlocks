@@ -1,5 +1,28 @@
 ------------------------------------------------------------
 TAG
+Tag name: ScienceTools-09-33-02, operation: add
+Package: BayesianBlocks
+User: jchiang  Fri May 23 08:12:53 2014
+Files:
+  BayesianBlocks/ChangeLog  1.50
+  BayesianBlocks/BayesianBlocksLib.py  1.1.1.1
+  BayesianBlocks/SConscript  1.7
+  BayesianBlocks/BayesianBlocks/BayesianBlocks.h  1.4
+  BayesianBlocks/doc/release.notes  1.7
+  BayesianBlocks/doc/Doxyfile  1.1.1.1
+  BayesianBlocks/python/test_BB.py  1.1.1.1
+  BayesianBlocks/python/create_lc_file.py  1.5
+  BayesianBlocks/python/bb_analysis.py  1.4
+  BayesianBlocks/python/FitsNTuple.py  1.1
+  BayesianBlocks/python/BayesianBlocks_python.py  1.1.1.1
+  BayesianBlocks/python/test_BB_speed.py  1.1.1.1
+  BayesianBlocks/src/mainpage.h  1.1.1.1
+  BayesianBlocks/src/BayesianBlocks.cxx  1.2
+  BayesianBlocks/src/BayesianBlocks.i  1.3
+
+    *
+------------------------------------------------------------
+TAG
 Tag name: ScienceTools-09-33-01, operation: add
 Package: BayesianBlocks
 User: jchiang  Thu May 15 15:19:23 2014
