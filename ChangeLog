@@ -1,4 +1,13 @@
 ------------------------------------------------------------
+User: jchiang  Tue Aug 25 12:48:46 PDT 2015
+ScienceTools-scons/BayesianBlocks/python
+
+Modified Files:
+	BayesianBlocks_python.py test_BB.py test_BB_speed.py 
+Log Message:
+test_BB.py
+    *
+------------------------------------------------------------
 TAG
 Tag name: ScienceTools-10-00-05, operation: add
 Package: BayesianBlocks
