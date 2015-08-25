@@ -6,7 +6,7 @@ Letters, 12, 105. (http://arxiv.org/abs/math/0309285)
 @author J. Chiang <jchiang@slac.stanford.edu>
 """
 #
-# $Id: BayesianBlocks_python.py,v 1.1.1.1 2011/06/02 19:41:04 jrb Exp $
+# $Id: BayesianBlocks_python.py,v 1.1.1.1 2011/09/03 00:55:59 jchiang Exp $
 #
 import copy
 import numpy as num
@@ -109,8 +109,12 @@ class BayesianBlocks(object):
         yy = []
         cell_sizes = self.cellSizes
         for imin, imax in zip(changePoints[:-1], changePoints[1:]):
-            xx.extend([self.tstart + sum(cell_sizes[:imin]),
-                       self.tstart + sum(cell_sizes[:imax])])
+            try:
+                xx.extend([self.tstart + sum(cell_sizes[:imin]),
+                           self.tstart + sum(cell_sizes[:imax])])
+            except IndexError:
+                xx.extend([self.tstart + imin*cell_sizes,
+                           self.tstart + imax*cell_sizes])
             if self.point_mode:
                 f, sig, weights = self._point_block_data(imin, imax-1)
                 yval = sum(weights*f)
@@ -135,7 +139,10 @@ class BayesianBlocks(object):
         my_cost = content*(num.log(content/size) - 1)
         return my_cost
     def blockSize(self, imin, imax):
-        return sum(self.cellSizes[imin:imax+1])
+        try:
+            return sum(self.cellSizes[imin:imax+1])
+        except IndexError:
+            return self.cellSizes*(imax - imin)
     def blockContent(self, imin, imax):
         return sum(self.cellContent[imin:imax+1])
     def _generateCells(self, events):
