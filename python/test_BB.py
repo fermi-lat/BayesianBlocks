@@ -87,7 +87,7 @@ for ncpPrior in range(1, 10):
     xx, yy = bb.lightCurve(ncpPrior)
     plot.curve(xx, yy, color='r', linewidth=3)
 
-    print ncpPrior
+    print (ncpPrior)
     xxp, yyp = bbp.lightCurve(ncpPrior)
     plot.curve(xxp, yyp, color='g', linewidth=1)
 
