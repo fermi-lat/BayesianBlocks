@@ -29,7 +29,7 @@ class FitsNTuple:
         #
         columnData = {}
         for i, file in enumerate(fitsfiles):
-            #print "adding", file
+            #print ("adding", file)
             table = pyfits.open(file.strip(" "))
             if i == 0:
                 self.names = table[extension].columns.names

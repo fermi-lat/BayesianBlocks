@@ -67,6 +67,6 @@ if __name__ == '__main__':
     try:
         evfile, lcfile = sys.argv[1:3]
     except:
-        print "usage: python bb_analysis.py evfile lcfile"
+        print ("usage: python bb_analysis.py evfile lcfile")
         sys.exit()
     ncp, ncpPrior, nevents = bb_analysis(evfile, lcfile)

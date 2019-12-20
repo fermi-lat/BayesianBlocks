@@ -74,7 +74,7 @@ if __name__ == '__main__':
     try:
         evfile, scfile, lcfile, irfs = sys.argv[1:5]
     except:
-        print "usage: python create_lc_file.py evfile, scfile, lcfile, irfs"
+        print ("usage: python create_lc_file.py evfile, scfile, lcfile, irfs")
         sys.exit()
     
     create_lc_file(evfile, scfile, lcfile, irfs)
