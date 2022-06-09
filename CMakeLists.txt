@@ -1,5 +1,5 @@
 ###### Library ######
-add_library(BayesianBlocks SHARED src/BayesianBlocks.cxx)
+add_library(BayesianBlocks src/BayesianBlocks.cxx)
 add_library(Fermitools::BayesianBlocks ALIAS BayesianBlocks)
 
 target_include_directories(
