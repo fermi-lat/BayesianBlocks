@@ -36,7 +36,7 @@ class FitsNTuple:
             for name in self.names:
                 myData = table[extension].data.field(name)
                 if myData.dtype.name.find('float') == 0:
-                    myData = np.array(myData, dtype=np.float)
+                    myData = np.array(myData, dtype=float)
                 if myData.dtype.name.find('int') == 0:
                     myData = np.array(myData, dtype=np.int)
                 if i == 0:
