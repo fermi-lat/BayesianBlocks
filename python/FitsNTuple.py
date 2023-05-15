@@ -38,7 +38,7 @@ class FitsNTuple:
                 if myData.dtype.name.find('float') == 0:
                     myData = np.array(myData, dtype=float)
                 if myData.dtype.name.find('int') == 0:
-                    myData = np.array(myData, dtype=np.int)
+                    myData = np.array(myData, dtype=int)
                 if i == 0:
                     columnData[name] = myData
                 else:
