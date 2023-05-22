@@ -62,7 +62,7 @@ for ncpPrior in range(1, 10):
 func0 = Gaussian(1, 10, 3)
 class Histogram(object):
     def __init__(self, xmin, xmax, nx):
-        self.bins = num.zeros(nx, dtype=num.float)
+        self.bins = num.zeros(nx, dtype=float)
         self.xstep = (xmax - xmin)/float(nx-1)
         self.xvals = num.linspace(xmin, xmax, nx) + self.xstep/2.
     def add(self, x, wt=1):
@@ -76,7 +76,7 @@ for i in range(100):
 
 bb = BayesianBlocks.BayesianBlocks(hist.xvals[0] - hist.xstep/2.,
                                    hist.bins, 
-                                   num.ones(len(hist.bins), dtype=num.float)*hist.xstep)
+                                   num.ones(len(hist.bins), dtype=float)*hist.xstep)
                                     
 bbp = BayesianBlocks_python.BayesianBlocks(hist.bins, 
                                            num.ones(len(hist.bins))*hist.xstep,
