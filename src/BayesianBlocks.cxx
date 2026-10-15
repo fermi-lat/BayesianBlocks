@@ -100,11 +100,11 @@ globalOpt(double ncp_prior,
    lightCurve(changePoints, xvals, yvals);
 }
 
-double BayesianBlocks::blockSize(size_t imin, size_t imax) const {
+auto BayesianBlocks::blockSize(size_t imin, size_t imax) const -> double {
    return m_cellSizePartialSums[imax+1] - m_cellSizePartialSums[imin];
 }
 
-double BayesianBlocks::blockContent(size_t imin, size_t imax) const {
+auto BayesianBlocks::blockContent(size_t imin, size_t imax) const -> double {
    return m_cellContentPartialSums[imax+1] - m_cellContentPartialSums[imin];
 }
 
@@ -167,8 +167,8 @@ void BayesianBlocks::cellPartialSums() {
    ::computePartialSums(m_cellContent, m_cellContentPartialSums);
 }
 
-double BayesianBlocks::
-BlockCostEvent::operator()(size_t imin, size_t imax) const {
+auto BayesianBlocks::
+BlockCostEvent::operator()(size_t imin, size_t imax) const -> double {
    double block_size(m_bbObject.blockSize(imin, imax));
    double block_content(m_bbObject.blockContent(imin, imax));
    if (block_content == 0) {
@@ -178,8 +178,8 @@ BlockCostEvent::operator()(size_t imin, size_t imax) const {
    return cost;
 }
 
-double BayesianBlocks::
-BlockCostPoint::operator()(size_t imin, size_t imax) const {
+auto BayesianBlocks::
+BlockCostPoint::operator()(size_t imin, size_t imax) const -> double {
    std::vector<double> weights;
    weights.reserve(imax - imin);
    double sum_wts(0);
@@ -202,7 +202,7 @@ BlockCostPoint::operator()(size_t imin, size_t imax) const {
    return -sigx2/2.*sum_wts;
 }
 
-double BayesianBlocks::ncp_prior(double nevents, double fp_frac) {
+auto BayesianBlocks::ncp_prior(double nevents, double fp_frac) -> double {
    double value = 4. - std::log(fp_frac/(0.0136*std::pow(nevents, 0.478)));
    return value;
 }
