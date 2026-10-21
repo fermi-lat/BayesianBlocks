@@ -14,7 +14,8 @@ target_link_libraries(BayesianBlocks PUBLIC astro st_facilities Likelihood irfIn
 include(UseSWIG)
 
 set(UseSWIG_TARGET_NAME_PREFERENCE STANDARD)
-set(CMAKE_SWIG_FLAGS -w362 -w389 -w401 -w402 -w503 -w509)
+set(CMAKE_SWIG_FLAGS -py3-stable-abi -w362 -w389 -w401 -w402 -w503 -w509)
+#set(CMAKE_SWIG_FLAGS -w362 -w389 -w401 -w402 -w503 -w509)
 
 set_property(SOURCE src/BayesianBlocks.i PROPERTY CPLUSPLUS ON)
 swig_add_library(py_BayesianBlocks LANGUAGE python SOURCES src/BayesianBlocks.i)
