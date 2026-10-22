@@ -27,7 +27,7 @@ target_include_directories(
   PUBLIC $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}> $<INSTALL_INTERFACE:>
 )
 
-target_link_libraries(py_BayesianBlocks PUBLIC BayesianBlocks Python3::Python)
+target_link_libraries(py_BayesianBlocks PUBLIC BayesianBlocks Python3::SABIModule)
 
 if(APPLE)
   target_link_options(py_BayesianBlocks PRIVATE -bundle -flat_namespace)
